@@ -6,19 +6,31 @@ import { ChinaMap } from "./components/ChinaMap";
 import { Talent } from "./components/Talent";
 import { Expand } from "./components/Expand";
 import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
 
 function App() {
   return (
     <>
       <NavBar />
-      <HomePage />
-      <Incubating />
-      <ChinaMap />
-      <Talent />
-      <Expand />
-      <Contact />
-      <Footer />
+      <div className="snap-container">
+        <section className="snap-section">
+          <HomePage />
+        </section>
+        <section className="snap-section">
+          <Incubating />
+        </section>
+        <section className="snap-section">
+          <ChinaMap />
+        </section>
+        <section className="snap-section">
+          <Talent />
+        </section>
+        <section className="snap-section">
+          <Expand />
+        </section>
+        <section className="snap-section">
+          <Contact />
+        </section>
+      </div>
     </>
   );
 }
