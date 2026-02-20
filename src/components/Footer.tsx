@@ -8,87 +8,110 @@ const MotionButton = motion(Button);
 const FooterItems = () => (
   <>
     {/* Left side */}
-    <Typography sx={{ color: "white", opacity: 0.8 }}>
-      COSMO © 2026
-    </Typography>
+    <Typography sx={{ color: "white", opacity: 0.8 }}>COSMO © 2026</Typography>
 
     {/* Right side */}
-    <Stack direction="row" spacing={10} alignItems="center" bgcolor={"transparent"}>
-      <Stack direction="row" spacing={1} alignItems="center" bgcolor={"transparent"}>
-        <Typography sx={{ color: "white", fontWeight: "bold" }}>Connect</Typography>
-        <MotionButton 
-          variant="text" 
+    <Stack
+      direction="row"
+      spacing={20}
+      alignItems="center"
+      bgcolor={"transparent"}
+    >
+      <Stack
+        direction="row"
+        spacing={1}
+        alignItems="center"
+        bgcolor={"transparent"}
+      >
+        <Typography sx={{ color: "white", fontWeight: "bold" }}>
+          Connect
+        </Typography>
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           Instagram
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           TikTok
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           X
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           FaceBook
         </MotionButton>
       </Stack>
 
-      <Stack direction="row" spacing={1} alignItems="center" bgcolor={"transparent"}>
-        <Typography sx={{ color: "white", fontWeight: "bold" }}>More</Typography>
-        <MotionButton 
-          variant="text" 
+      <Stack
+        direction="row"
+        spacing={1}
+        alignItems="center"
+        bgcolor={"transparent"}
+      >
+        <Typography sx={{ color: "white", fontWeight: "bold" }}>
+          More
+        </Typography>
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           Terms
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           Privacy
         </MotionButton>
@@ -112,89 +135,118 @@ const MobileFooter = () => {
         zIndex: 1200,
       }}
     >
-      <Stack direction="row" justifyContent="space-between" alignItems="center" bgcolor={"transparent"}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        bgcolor={"transparent"}
+      >
         <Typography sx={{ color: "white", opacity: 0.8 }}>
           COSMO © 2026
         </Typography>
         <Stack direction="row" spacing={2} bgcolor={"transparent"}>
-          <Stack direction="row" spacing={1} alignItems="center" bgcolor={"transparent"}>
-            <Typography sx={{ color: "white", fontWeight: "bold", fontSize: "0.9rem" }}>Connect</Typography>
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            bgcolor={"transparent"}
+          >
+            <Typography
+              sx={{ color: "white", fontWeight: "bold", fontSize: "0.9rem" }}
+            >
+              Connect
+            </Typography>
           </Stack>
-          <Stack direction="row" spacing={1} alignItems="center" bgcolor={"transparent"}>
-            <Typography sx={{ color: "white", fontWeight: "bold", fontSize: "0.9rem" }}>More</Typography>
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            bgcolor={"transparent"}
+          >
+            <Typography
+              sx={{ color: "white", fontWeight: "bold", fontSize: "0.9rem" }}
+            >
+              More
+            </Typography>
           </Stack>
         </Stack>
       </Stack>
-      
+
       {/* Social links row for mobile */}
-      <Stack direction="row" justifyContent="space-between" flexWrap="wrap" gap={1} bgcolor={"transparent"}>
-        <MotionButton 
-          variant="text" 
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        flexWrap="wrap"
+        gap={1}
+        bgcolor={"transparent"}
+      >
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8, fontSize: "0.8rem", p: 0.5 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
         >
           Instagram
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8, fontSize: "0.8rem", p: 0.5 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
         >
           TikTok
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8, fontSize: "0.8rem", p: 0.5 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
         >
           X
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8, fontSize: "0.8rem", p: 0.5 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
         >
           FaceBook
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8, fontSize: "0.8rem", p: 0.5 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
         >
           Terms
         </MotionButton>
-        <MotionButton 
-          variant="text" 
+        <MotionButton
+          variant="text"
           sx={{ color: "white", opacity: 0.8, fontSize: "0.8rem", p: 0.5 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.5,
             opacity: 1,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           whileTap={{ scale: 0.9 }}
         >

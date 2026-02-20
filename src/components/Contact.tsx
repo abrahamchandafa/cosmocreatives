@@ -36,9 +36,9 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
         variant="contained"
         sx={{
           my: 5,
-          height: "80px",
+          height: "120px",
           fontSize: "2rem",
-          borderRadius: "40px",
+          borderRadius: "60px",
           width: "300px",
           padding: "10px 40px",
           display: "flex",

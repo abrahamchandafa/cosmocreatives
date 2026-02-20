@@ -12,7 +12,7 @@ const NavItems = () => (
       variant="text"
       whileHover={{ scale: 1.5 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       Manifesto
     </MotionButton>
@@ -20,6 +20,7 @@ const NavItems = () => (
       variant="text"
       whileHover={{ scale: 1.5 }}
       whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       Careers
     </MotionButton>
@@ -27,6 +28,7 @@ const NavItems = () => (
       variant="outlined"
       whileHover={{ scale: 1.5 }}
       whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       Sign In
     </MotionButton>
@@ -34,6 +36,7 @@ const NavItems = () => (
       variant="contained"
       whileHover={{ scale: 1.5 }}
       whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       Join Waitlist
     </MotionButton>
