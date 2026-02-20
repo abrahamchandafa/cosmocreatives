@@ -40,7 +40,7 @@ const CyclingButton = ({ isMobile }: CyclingButtonProps) => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, items.length]);
 
   return (
     <Button
@@ -48,9 +48,9 @@ const CyclingButton = ({ isMobile }: CyclingButtonProps) => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       sx={{
-        height: isMobile ? "20px" : "25px",
-        width: isMobile ? "80px" : "100px",
-        fontSize: isMobile ? "0.7rem" : "0.875rem",
+        height: isMobile ? "30px" : "35px",
+        width: isMobile ? "80px" : "120px",
+        fontSize: isMobile ? "0.9rem" : "1.3rem",
         opacity: fade ? 1 : 0,
         transition: "opacity 0.5s ease-in-out, border-color 0.3s, color 0.3s",
         "&:hover": {
@@ -79,7 +79,7 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
       <Typography
         variant={isMobile ? "h3" : "h1"}
         sx={{
-          fontSize: isMobile ? "3rem" : "6rem",
+          fontSize: isMobile ? "5rem" : "10rem",
         }}
       >
         COSMO
@@ -87,7 +87,7 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
       <Stack
         direction="row"
         alignItems="center"
-        spacing={isMobile ? 0.5 : 1}
+        spacing={isMobile ? 1 : 1}
         bgcolor={"transparent"}
         flexWrap="wrap"
         justifyContent="center"
@@ -96,7 +96,7 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
           variant={isMobile ? "body1" : "h6"}
           color="gray"
           sx={{
-            fontSize: isMobile ? "1rem" : "1.25rem",
+            fontSize: isMobile ? "1.5rem" : "2rem",
           }}
         >
           A home for

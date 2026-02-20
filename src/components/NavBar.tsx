@@ -1,14 +1,42 @@
 import { useIsMobile } from "../hooks/useIsMobile";
 import HomeIcon from "@mui/icons-material/Home";
 import { Button, Stack } from "@mui/material";
+import { motion } from "motion/react";
+
+const MotionButton = motion(Button);
 
 const NavItems = () => (
   <>
     <HomeIcon />
-    <Button variant="text">Manifesto</Button>
-    <Button variant="text">Careers</Button>
-    <Button variant="outlined">Sign In</Button>
-    <Button variant="contained">Join Waitlist</Button>
+    <MotionButton 
+      variant="text"
+      whileHover={{ scale: 1.5 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+    >
+      Manifesto
+    </MotionButton>
+    <MotionButton 
+      variant="text"
+      whileHover={{ scale: 1.5 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Careers
+    </MotionButton>
+    <MotionButton 
+      variant="outlined"
+      whileHover={{ scale: 1.5 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Sign In
+    </MotionButton>
+    <MotionButton 
+      variant="contained"
+      whileHover={{ scale: 1.5 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Join Waitlist
+    </MotionButton>
   </>
 );
 

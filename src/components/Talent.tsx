@@ -26,16 +26,16 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
           fontSize: isMobile ? "3rem" : "5rem",
         }}
       >
-        Incubating talents and brands for China synergies
+        Developing talent that resonates,
       </Typography>
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={isMobile ? 0.5 : 1}
-        bgcolor={"transparent"}
-        flexWrap="wrap"
-        justifyContent="center"
-      ></Stack>
+      <Typography
+        variant={isMobile ? "h3" : "h1"}
+        sx={{
+          fontSize: isMobile ? "3rem" : "5rem",
+        }}
+      >
+        not just translates
+      </Typography>
     </Stack>
   );
 };
@@ -48,7 +48,7 @@ const DesktopView = () => {
   return <HomeContent isMobile={false} />;
 };
 
-export const Incubating = () => {
+export const Talent = () => {
   const isMobile = useIsMobile();
 
   return isMobile ? <MobileView /> : <DesktopView />;
