@@ -61,6 +61,7 @@ const MobileView = () => {
           fontSize: "0.75rem",
           minWidth: "auto",
           padding: "5px 15px",
+          whiteSpace: "nowrap",
         },
         "& svg": {
           fontSize: "1.5rem",
