@@ -7,7 +7,6 @@ interface ThreeDBackgroundProps {
   isMobile: boolean;
 }
 
-// Individual image tile component
 const ImageTile = ({
   url,
   position,
@@ -27,7 +26,6 @@ const ImageTile = ({
   );
 };
 
-// Scene component with mouse tracking
 const Scene = ({
   mouseRef,
 }: {
@@ -35,13 +33,11 @@ const Scene = ({
 }) => {
   const groupRef = useRef<THREE.Group>(null);
 
-  // Image URLs
   const imageUrls = Array.from(
     { length: 13 },
     (_, i) => `/tiny_images/${i + 1}.jpg`,
   );
 
-  // Pre-defined positions - adjust these to your liking
   const positions: [number, number, number][] = [
     [-4, 3, -2],
     [-1.5, 3, -1],
@@ -58,7 +54,6 @@ const Scene = ({
     [2, 1, 2.5],
   ];
 
-  // Pre-defined rotations
   const rotations: [number, number, number][] = [
     [0.1, 0.2, 0],
     [-0.1, -0.1, 0.1],
@@ -77,15 +72,13 @@ const Scene = ({
 
   useFrame(() => {
     if (groupRef.current) {
-      // Smoothly interpolate rotation based on mouse position
-      // This creates a gentle following effect
-      const targetY = mouseRef.current.x * 0.3;
-      const targetX = mouseRef.current.y * 0.1;
+      const targetY = mouseRef.current.x * 0.4;
+      const targetX = mouseRef.current.y * 0.2;
 
       groupRef.current.rotation.y +=
-        (targetY - groupRef.current.rotation.y) * 0.05;
+        (targetY - groupRef.current.rotation.y) * 0.01;
       groupRef.current.rotation.x +=
-        (targetX - groupRef.current.rotation.x) * 0.05;
+        (targetX - groupRef.current.rotation.x) * 0.01;
     }
   });
 
@@ -107,9 +100,7 @@ export const ThreeDBackground = ({ isMobile }: ThreeDBackgroundProps) => {
   const mouseRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Track mouse movement on the entire window, not just the canvas
     const handleMouseMove = (e: MouseEvent) => {
-      // Convert mouse position to normalized coordinates (-1 to 1)
       mouseRef.current = {
         x: (e.clientX / window.innerWidth) * 2 - 1,
         y: -(e.clientY / window.innerHeight) * 2 + 1,
@@ -132,7 +123,7 @@ export const ThreeDBackground = ({ isMobile }: ThreeDBackgroundProps) => {
         width: "100vw",
         height: "100vh",
         zIndex: 0,
-        pointerEvents: "none", // This allows scrolling through the canvas!
+        pointerEvents: "none",
       }}
     >
       <Canvas
@@ -142,7 +133,7 @@ export const ThreeDBackground = ({ isMobile }: ThreeDBackgroundProps) => {
         }}
         style={{
           background: "transparent",
-          pointerEvents: "none", // Also set on canvas to be safe
+          pointerEvents: "none",
         }}
       >
         <Scene mouseRef={mouseRef} />
