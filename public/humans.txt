@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Abraham Chandafa
+Role: Full Stack Developer
+Site: https://abrahamchandafa.github.io
+LinkedIn: https://www.linkedin.com/in/abrahamchandafa
+GitHub: @abrahamchandafa
+
+/* THANKS */
+Thanks to all contributors and open source projects that made this possible.
+
+/* TECHNOLOGY */
+Frontend: React, TypeScript, MUI, Framer Motion
+Fonts: Lato, Inter
+
+/* UPDATED */
+Last update: 2026-02-22

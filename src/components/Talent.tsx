@@ -59,7 +59,7 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
           } else {
             clearInterval(timer2);
           }
-        }, 100);
+        }, 50);
         
         return () => clearInterval(timer2);
       }
@@ -89,7 +89,7 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
           opacity: 0, 
           filter: "blur(20px)" 
         }}
-        transition={{ duration: 4, ease: "easeOut" }}
+        transition={{ duration: 3, ease: "easeOut" }}
       >
         <Stack spacing={2} sx={{ alignItems: "center" }} bgcolor={"transparent"}>
           <Typography
