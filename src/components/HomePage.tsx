@@ -49,7 +49,7 @@ const CyclingButton = ({ isMobile }: CyclingButtonProps) => {
       onMouseLeave={() => setIsPaused(false)}
       sx={{
         height: isMobile ? "30px" : "35px",
-        width: isMobile ? "80px" : "120px",
+        width: isMobile ? "90px" : "150px",
         fontSize: isMobile ? "0.9rem" : "1.3rem",
         opacity: fade ? 1 : 0,
         transition: "opacity 0.5s ease-in-out, border-color 0.3s, color 0.3s",

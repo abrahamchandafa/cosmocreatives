@@ -52,15 +52,16 @@ const MobileView = () => {
       zIndex={1200}
       justifyContent={"center"}
       alignItems={"center"}
-      padding={0.5}
+      padding={1}
       sx={{
         top: "20px",
         left: "50%",
         transform: "translateX(-50%)",
         "& .MuiButton-root": {
-          fontSize: "0.75rem",
+          fontSize: "0.7rem",
           minWidth: "auto",
-          padding: "5px 15px",
+          padding: "10px 15px",
+          whiteSpace: "nowrap",
         },
         "& svg": {
           fontSize: "1.5rem",

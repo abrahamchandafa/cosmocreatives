@@ -15,11 +15,10 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
     <Stack
       sx={{
         backgroundColor: "#0B0D12",
-        width: "90vw",
+        width: "100vw",
         height: "100vh",
         alignItems: "center",
         justifyContent: "center",
-        mx: "20px",
       }}
     >
       <Typography
