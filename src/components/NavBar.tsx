@@ -22,7 +22,7 @@ const NavItems = () => (
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
-      Careers
+      About
     </MotionButton>
     <MotionButton 
       variant="outlined"
@@ -30,7 +30,7 @@ const NavItems = () => (
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
-      Sign In
+      Contact
     </MotionButton>
     <MotionButton 
       variant="contained"

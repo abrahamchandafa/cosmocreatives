@@ -2,6 +2,7 @@ import { Stack } from "@mui/system";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { ThreeDBackground } from "./ThreeDBackground";
 
 // Define props interfaces
 interface CyclingButtonProps {
@@ -62,7 +63,6 @@ const CyclingButton = ({ isMobile }: CyclingButtonProps) => {
     </Button>
   );
 };
-
 const HomeContent = ({ isMobile }: HomeContentProps) => {
   return (
     <Stack
@@ -74,34 +74,58 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
         alignItems: "center",
         justifyContent: "center",
         margin: 0,
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <Typography
-        variant={isMobile ? "h3" : "h1"}
+      {/* 3D Background */}
+      <ThreeDBackground isMobile={isMobile} />
+
+      {/* Content overlay */}
+      <Stack
         sx={{
-          fontSize: isMobile ? "5rem" : "10rem",
+          position: "relative",
+          zIndex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          /*backdropFilter: "blur(5px)",
+          background: "rgba(0,0,0,0.3)",
+          */
+          background: "transparent",
+          padding: "40px",
+          borderRadius: "20px",
         }}
       >
-        COSMO
-      </Typography>
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={isMobile ? 1 : 1}
-        bgcolor={"transparent"}
-        flexWrap="wrap"
-        justifyContent="center"
-      >
         <Typography
-          variant={isMobile ? "body1" : "h6"}
-          color="gray"
+          variant={isMobile ? "h3" : "h1"}
           sx={{
-            fontSize: isMobile ? "1.5rem" : "2rem",
+            fontSize: isMobile ? "5rem" : "10rem",
+            color: "white",
+            textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
           }}
         >
-          A home for
+          COSMO
         </Typography>
-        <CyclingButton isMobile={isMobile} />
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={isMobile ? 1 : 1}
+          bgcolor={"transparent"}
+          flexWrap="wrap"
+          justifyContent="center"
+        >
+          <Typography
+            variant={isMobile ? "body1" : "h6"}
+            sx={{
+              fontSize: isMobile ? "1.5rem" : "2rem",
+              color: "white",
+            }}
+          >
+            A home for
+          </Typography>
+          <CyclingButton isMobile={isMobile} />
+        </Stack>
       </Stack>
     </Stack>
   );
