@@ -75,23 +75,21 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato';
-  font-weight: 400; /* Regular for headings */
-  letter-spacing: -0.02em; /* Slight tightening for premium look */
+  font-weight: 400;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 h1 {
-  font-weight: 300; /* Ultra-premium light weight for big headings */
+  font-weight: 300;
   font-size: 3.2em;
 }
 
-/* Premium thin text for special elements */
 .premium-text-light {
   font-weight: 100;
   letter-spacing: 0.02em;
 }
 
-/* Bold for emphasis */
 .premium-text-bold {
   font-weight: 700;
 }
