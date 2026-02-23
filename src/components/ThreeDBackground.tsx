@@ -33,6 +33,13 @@ const Scene = ({
 }) => {
   const groupRef = useRef<THREE.Group>(null);
 
+  useEffect(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y = 0.4;
+      groupRef.current.rotation.x = 0.3;
+    }
+  }, []);
+
   const imageUrls = Array.from(
     { length: 13 },
     (_, i) => `/tiny_images/${i + 1}.jpg`,
