@@ -1,37 +1,22 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
-import { HomePage } from "./components/HomePage";
-import { Incubating } from "./components/Incubating";
-import { ChinaMap } from "./components/ChinaMap";
-import { Talent } from "./components/Talent";
-import { Expand } from "./components/Expand";
-import { Contact } from "./components/Contact";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Services } from "./pages/Services";
+import { Contact } from "./pages/Contact";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <div className="snap-container">
-        <section className="snap-section">
-          <HomePage />
-        </section>
-        <section className="snap-section">
-          <Incubating />
-        </section>
-        <section className="snap-section">
-          <ChinaMap />
-        </section>
-        <section className="snap-section">
-          <Talent />
-        </section>
-        <section className="snap-section">
-          <Expand />
-        </section>
-        <section className="snap-section">
-          <Contact />
-        </section>
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
