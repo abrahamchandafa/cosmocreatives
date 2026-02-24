@@ -78,7 +78,7 @@ export default function FormDialog() {
           borderColor: 'rgba(255,255,255,0.5)',
         }}
       >
-        Sign Up
+        Subscribe
       </MotionButton>
       
       <Dialog 
@@ -202,7 +202,7 @@ export default function FormDialog() {
         open={snackbarOpen}
         autoHideDuration={4000}
         onClose={() => setSnackbarOpen(false)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        sx={{ top: { xs: "50vh", sm: "50vh" }}} 
       >
         <Alert 
           severity="success"
