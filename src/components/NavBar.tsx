@@ -12,61 +12,58 @@ const NavItems = () => {
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
-    navigate('/');
+    navigate("/");
     window.scrollTo(0, 0);
   };
 
   return (
     <>
-      <MotionIconButton 
+      <MotionIconButton
         onClick={handleHomeClick}
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        sx={{ color: 'white' }}
+        sx={{ color: "white" }}
       >
         <HomeIcon />
       </MotionIconButton>
-      
-      <MotionButton 
-        component={Link}
-        to="/about"
+
+      <MotionButton
         variant="text"
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.5 }}
         whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        sx={{ color: 'white' }}
+        sx={{ color: "white" }}
       >
-        About
+        <Link to="/about" style={{ color: "inherit", textDecoration: "none" }}>
+          About
+        </Link>
       </MotionButton>
-      
-      <MotionButton 
-        component={Link}
-        to="/services"
+
+      <MotionButton
         variant="text"
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.5 }}
         whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        sx={{ color: 'white' }}
+        sx={{ color: "white" }}
       >
-        Services
+        <Link
+          to="/services"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          Services
+        </Link>
       </MotionButton>
-      
-      <MotionButton 
-        component={Link}
-        to="/contact"
-        variant="outlined"
-        whileHover={{ scale: 1.2 }}
+
+      <MotionButton
+        variant="text"
+        whileHover={{ scale: 1.5 }}
         whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        sx={{ 
-          color: 'white',
-          borderColor: 'rgba(255,255,255,0.5)',
-        }}
+        sx={{ color: "white" }}
       >
-        Contact
+        <Link to="/contact" style={{ color: "inherit", textDecoration: "none" }}>
+          Contact
+        </Link>
       </MotionButton>
-      
+
       <FormDialog />
     </>
   );

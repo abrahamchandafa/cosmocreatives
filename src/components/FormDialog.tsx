@@ -9,13 +9,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import { motion } from 'framer-motion';
-import Slide from '@mui/material/Slide';
 
 const MotionButton = motion(Button);
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
@@ -89,7 +84,6 @@ export default function FormDialog() {
       <Dialog 
         open={open} 
         onClose={handleClose}
-        TransitionComponent={Transition}
         PaperProps={{
           sx: {
             backgroundColor: '#0B0D12',
