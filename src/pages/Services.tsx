@@ -1,230 +1,190 @@
 import { Stack } from "@mui/system";
 import { useIsMobile } from "../hooks/useIsMobile";
-import { Typography, Paper, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { Typography, Container } from "@mui/material";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useRef } from "react";
-import BrushIcon from "@mui/icons-material/Brush";
-import PeopleIcon from "@mui/icons-material/People";
-import LanguageIcon from "@mui/icons-material/Language";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
-interface ServicesContentProps {
-  isMobile: boolean;
-}
-
-const ServicesContent = ({ isMobile }: ServicesContentProps) => {
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, {
-    once: false,
-    amount: 0.3,
-  });
-
-  useEffect(() => {
-    if (isInView) {
-      setHasAnimated(true);
-    } else {
-      setHasAnimated(false);
-    }
-  }, [isInView]);
-
-  const services = [
-    {
-      icon: <BrushIcon sx={{ fontSize: 40 }} />,
-      title: "Creative Direction",
-      description:
-        "We help brands find their authentic voice through strategic creative direction that resonates across cultures and connects with audiences on a deeper level.",
-    },
-    {
-      icon: <PeopleIcon sx={{ fontSize: 40 }} />,
-      title: "Talent Incubation",
-      description:
-        "From emerging artists to established creators, we provide the guidance, resources, and connections needed to thrive in today's competitive landscape.",
-    },
-    {
-      icon: <LanguageIcon sx={{ fontSize: 40 }} />,
-      title: "Cultural Strategy",
-      description:
-        "Navigate the complexities of cross-cultural communication with strategies that honor local nuances while maintaining global appeal.",
-    },
-    {
-      icon: <TrendingUpIcon sx={{ fontSize: 40 }} />,
-      title: "Brand Development",
-      description:
-        "Build brands that matter. We partner with you to develop identities, narratives, and experiences that leave lasting impressions.",
-    },
-  ];
+const ServicesContent = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <Stack
-      ref={containerRef}
-      sx={{
-        backgroundColor: "#0B0D12",
-        width: "100vw",
-        minHeight: "100vh",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-        py: 8,
-        px: 2,
-      }}
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, filter: "blur(20px)" }}
+      animate={isInView ? { opacity: 1, filter: "blur(0px)" } : {}}
+      transition={{ duration: 1.5, ease: "easeOut" }}
     >
       <Stack
-        spacing={6}
         sx={{
-          maxWidth: "1200px",
-          width: "100%",
+          width: "100vw",
+          minHeight: "100vh",
+          py: 12,
+          backgroundColor: "#0B0D12",
         }}
       >
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
-          animate={
-            hasAnimated
-              ? {
-                  opacity: 1,
-                  filter: "blur(0px)",
-                  y: 0,
-                }
-              : {
-                  opacity: 0,
-                  filter: "blur(20px)",
-                  y: 30,
-                }
-          }
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          <Typography
-            variant={isMobile ? "h3" : "h2"}
+        <Container maxWidth="md">
+          <Stack
+            spacing={4}
             sx={{
-              color: "white",
-              textAlign: "center",
-              fontFamily: '"Lato", sans-serif',
-              fontWeight: 300,
-              letterSpacing: "-0.02em",
-              mb: 2,
+              padding: 4,
+              backgroundColor: "#0B0D12",
             }}
           >
-            What We Do
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "rgba(255,255,255,0.7)",
-              textAlign: "center",
-              fontFamily: '"Lato", sans-serif',
-              fontSize: isMobile ? "1.1rem" : "1.3rem",
-              maxWidth: "800px",
-              mx: "auto",
-            }}
-          >
-            We partner with visionaries to transform ideas into impact
-          </Typography>
-        </motion.div>
+            <Typography variant="h3" sx={{ color: "white", fontWeight: 300 }}>
+              Services
+            </Typography>
 
-        {/* Services Grid */}
-        <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid item xs={12} sm={6} key={index}>
-              <motion.div
-                initial={{ opacity: 0, filter: "blur(20px)", y: 30 }}
-                animate={
-                  hasAnimated
-                    ? {
-                        opacity: 1,
-                        filter: "blur(0px)",
-                        y: 0,
-                      }
-                    : {
-                        opacity: 0,
-                        filter: "blur(20px)",
-                        y: 30,
-                      }
-                }
-                transition={{
-                  duration: 1.2,
-                  delay: 0.2 + index * 0.1,
-                  ease: "easeOut",
-                }}
-              >
-                <Paper
-                  elevation={0}
-                  sx={{
-                    p: 4,
-                    height: "100%",
-                    backgroundColor: "rgba(255,255,255,0.03)",
-                    backdropFilter: "blur(10px)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: 4,
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-8px)",
-                      borderColor: "#4a90e2",
-                    },
-                  }}
-                >
-                  <Stack spacing={2} alignItems="flex-start">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <Paper
-                        sx={{
-                          p: 1.5,
-                          backgroundColor: "#4a90e2",
-                          borderRadius: 2,
-                          color: "white",
-                        }}
-                      >
-                        {service.icon}
-                      </Paper>
-                    </motion.div>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.8,
+                textAlign: "justify",
+                textJustify: "inter-word",
+              }}
+            >
+              We partner with artists and creators who see China as more than a
+              tour stop - but as a long-term creative and commercial opportunity.
+              Our role is to help you enter, grow, and build sustainably within
+              one of the world's most engaged and community-driven fan ecosystems.
+            </Typography>
 
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        color: "white",
-                        fontFamily: '"Lato", sans-serif',
-                        fontWeight: 400,
-                      }}
-                    >
-                      {service.title}
-                    </Typography>
+            <Typography variant="h5" sx={{ color: "white", mt: 2 }}>
+              Market Entry & Positioning
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.8,
+                textAlign: "justify",
+                textJustify: "inter-word",
+              }}
+            >
+              We help you define how your story translates for China audiences -
+              without losing your identity. From platform selection and account
+              setup to long-term brand vision, we design a clear roadmap tailored
+              to your stage of career and goals.
+            </Typography>
 
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: "rgba(255,255,255,0.7)",
-                        fontFamily: '"Lato", sans-serif',
-                        fontWeight: 300,
-                        lineHeight: 1.8,
-                      }}
-                    >
-                      {service.description}
-                    </Typography>
-                  </Stack>
-                </Paper>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
+            <Typography variant="h5" sx={{ color: "white", mt: 2 }}>
+              Localized Content & Community Building
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.8,
+                textAlign: "justify",
+                textJustify: "inter-word",
+              }}
+            >
+              Success in China requires platform-native storytelling. We guide
+              content strategy, oversee local production, manage social accounts,
+              and build engaged fan communities that feel personal and authentic.
+              No recycled grids - every rollout is intentional and culturally
+              fluent.
+            </Typography>
+
+            <Typography variant="h5" sx={{ color: "white", mt: 2 }}>
+              Fan Economy & Monetization Strategy
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.8,
+                textAlign: "justify",
+                textJustify: "inter-word",
+              }}
+            >
+              China's fan culture is powerful and organized. We help you activate
+              it thoughtfully - through merchandise, exclusive content, streaming
+              optimization, brand collaborations, and curated experiences that
+              deepen loyalty while creating recurring revenue.
+            </Typography>
+
+            <Typography variant="h5" sx={{ color: "white", mt: 2 }}>
+              Brand Partnerships
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.8,
+                textAlign: "justify",
+                textJustify: "inter-word",
+              }}
+            >
+              We connect you with aligned local and international brands operating
+              in China, negotiating partnerships that enhance your artistic
+              credibility while unlocking meaningful commercial upside.
+            </Typography>
+
+            <Typography variant="h5" sx={{ color: "white", mt: 2 }}>
+              Touring & Live Experiences
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.8,
+                textAlign: "justify",
+                textJustify: "inter-word",
+              }}
+            >
+              We extend your digital footprint into real-world impact. From
+              production to promotion and local partnerships, we help you step
+              into the market confidently - performing, connecting, and building
+              lasting bonds with your audience.
+            </Typography>
+
+            <Typography variant="h5" sx={{ color: "white", mt: 2 }}>
+              Long-Term Growth
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.8,
+                textAlign: "justify",
+                textJustify: "inter-word",
+              }}
+            >
+              We believe China rewards commitment. We work with artists who want
+              to immerse themselves in the culture, collaborate locally, and scale
+              thoughtfully over time - not chase short-term moments.
+            </Typography>
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: "white",
+                fontSize: "1.2rem",
+                textAlign: "center",
+                mt: 6,
+                fontStyle: "italic",
+              }}
+            >
+              At Cosmo Creatives, we act as both strategic partner and cultural
+              translator - helping you build something real, sustainable, and
+              globally powerful within the China market.
+            </Typography>
+          </Stack>
+        </Container>
       </Stack>
-    </Stack>
+    </motion.div>
   );
 };
 
 const MobileView = () => {
-  return <ServicesContent isMobile={true} />;
+  return <ServicesContent />;
 };
 
 const DesktopView = () => {
-  return <ServicesContent isMobile={false} />;
+  return <ServicesContent />;
 };
 
 export const Services = () => {

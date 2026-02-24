@@ -29,7 +29,7 @@ export const theme = createTheme({
 
     },
     typography: {
-    fontFamily: '"Host Grotesk", "Open Sans", "Lato",  sans-serif',
+    fontFamily: '"Inter","Open Sans", "Lato",  sans-serif',
     h1: {
       fontWeight: 600,
       letterSpacing: '-0.02em',

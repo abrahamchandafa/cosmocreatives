@@ -3,6 +3,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { Button, Stack, IconButton } from "@mui/material";
 import { motion } from "motion/react";
 import { Link, useNavigate } from "react-router-dom";
+import FormDialog from "./FormDialog";
 
 const MotionButton = motion(Button);
 const MotionIconButton = motion(IconButton);
@@ -31,7 +32,7 @@ const NavItems = () => {
         component={Link}
         to="/about"
         variant="text"
-        whileHover={{ scale: 1.5 }}
+        whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         sx={{ color: 'white' }}
@@ -43,7 +44,7 @@ const NavItems = () => {
         component={Link}
         to="/services"
         variant="text"
-        whileHover={{ scale: 1.5 }}
+        whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         sx={{ color: 'white' }}
@@ -55,7 +56,7 @@ const NavItems = () => {
         component={Link}
         to="/contact"
         variant="outlined"
-        whileHover={{ scale: 1.5 }}
+        whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         sx={{ 
@@ -66,17 +67,7 @@ const NavItems = () => {
         Contact
       </MotionButton>
       
-      <MotionButton 
-        component={Link}
-        to="/#subscribe"
-        variant="contained"
-        whileHover={{ scale: 1.5 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        sx={{ backgroundColor: '#4a90e2' }}
-      >
-        Subscribe
-      </MotionButton>
+      <FormDialog />
     </>
   );
 };
