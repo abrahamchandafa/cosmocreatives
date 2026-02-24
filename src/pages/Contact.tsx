@@ -90,10 +90,11 @@ const ContactContent = ({ isMobile }: { isMobile: boolean }) => {
         justifyContent: "center",
         py: { xs: 6, md: 10 },
         px: 2,
+        mt: 2
       }}
     >
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0,}}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
         style={{ textAlign: "center", marginBottom: "2rem", width: "100%" }}
@@ -184,7 +185,7 @@ const ContactContent = ({ isMobile }: { isMobile: boolean }) => {
               helperText={errors.message?.message}
               fullWidth
               multiline
-              rows={10}
+              rows={5}
               InputProps={{
                 startAdornment: <InputAdornment position="start" sx={{ alignItems: "flex-start", mt: 1.5 }}><MessageIcon sx={{ color: "rgba(255,255,255,0.5)" }} /></InputAdornment>,
               }}
