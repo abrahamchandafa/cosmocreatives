@@ -44,7 +44,7 @@ const ContactContent = ({ isMobile }: { isMobile: boolean }) => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch("https://formsubmit.co/ajax/abrahamchandafa@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/4289e46b9d1986f68f46d16efccbdd78", {
         method: "POST",
         headers: { 
           'Accept': 'application/json',
