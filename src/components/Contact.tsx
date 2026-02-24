@@ -3,6 +3,7 @@ import { useIsMobile } from "../hooks/useIsMobile";
 import { Button, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const MotionButton = motion(Button);
 
@@ -11,6 +12,12 @@ interface HomeContentProps {
 }
 
 const HomeContent = ({ isMobile }: HomeContentProps) => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate("/contact");
+  };
+
   return (
     <Stack
       sx={{
@@ -24,8 +31,10 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
       <Typography
         variant={isMobile ? "h3" : "h1"}
         sx={{
-          fontSize: "3rem",
+          fontSize: isMobile ? "2.5rem" : "3rem",
           color: "white",
+          textAlign: "center",
+          px: 2,
         }}
       >
         Partner with us.
@@ -33,17 +42,18 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
       
       <MotionButton
         variant="contained"
+        onClick={handleGetStarted}
         sx={{
           my: 5,
-          height: "120px",
-          fontSize: "2rem",
+          height: isMobile ? "80px" : "120px",
+          fontSize: isMobile ? "1.5rem" : "2rem",
           borderRadius: "60px",
-          width: "300px",
+          width: isMobile ? "250px" : "300px",
           padding: "10px 40px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 0.1
+          gap: 0.1,
         }}
         whileHover="hover"
         initial="initial"
@@ -67,7 +77,7 @@ const HomeContent = ({ isMobile }: HomeContentProps) => {
           transition={{ duration: 0.3 }}
           style={{ display: "inline-flex", alignItems: "center", height: "100%" }}
         >
-          <ArrowForwardIcon sx={{ fontSize: "2rem" }} />
+          <ArrowForwardIcon sx={{ fontSize: isMobile ? "1.5rem" : "2rem" }} />
         </motion.div>
       </MotionButton>
     </Stack>
