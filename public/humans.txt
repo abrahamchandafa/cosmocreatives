@@ -6,11 +6,11 @@ LinkedIn: https://www.linkedin.com/in/abrahamchandafa
 GitHub: @abrahamchandafa
 
 /* THANKS */
-Thanks to all contributors and open source projects that made this possible.
+Thanks to all the open source projects that made this possible.
 
 /* TECHNOLOGY */
-Frontend: React, TypeScript, MUI, Framer Motion
-Fonts: Lato, Inter
+Frontend: React, TypeScript, MUI, Framer Motion, Three.js
+Fonts: Inter, Open Sans, Lato, Sans Siteerif
 
 /* UPDATED */
-Last update: 2026-02-22
+Last update: 2026-02-25
