@@ -1,6 +1,6 @@
 /* TEAM */
 Developer: Abraham Chandafa
-Role: Full Stack Developer
+Role: Software Engineer
 Site: https://abrahamchandafa.github.io
 LinkedIn: https://www.linkedin.com/in/abrahamchandafa
 GitHub: @abrahamchandafa
@@ -13,4 +13,4 @@ Frontend: React, TypeScript, MUI, Framer Motion, Three.js
 Fonts: Inter, Open Sans, Lato, Sans Siteerif
 
 /* UPDATED */
-Last update: 2026-02-25
+Last update: 2026-03-04
